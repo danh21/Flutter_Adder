@@ -9,6 +9,9 @@ on:
     branches: [ main ]
   workflow_dispatch:   # cho phép chạy tay từ tab Actions
 
+permissions:
+  contents: write
+
 jobs:
   build-windows:
     runs-on: windows-latest
