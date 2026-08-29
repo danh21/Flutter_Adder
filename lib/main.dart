@@ -103,14 +103,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget buildButton(String buttonText) {
-    return new Expanded(
-      child: new OutlineButton(
-        padding: new EdgeInsets.all(30.0),
-        child: new Text(
-          buttonText,
-          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+    return Expanded(
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.all(30.0),
+          shape:
+              const RoundedRectangleBorder(), // giữ góc vuông giống OutlineButton mặc định
         ),
         onPressed: () => buttonPressed(buttonText),
+        child: Text(
+          buttonText,
+          style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
